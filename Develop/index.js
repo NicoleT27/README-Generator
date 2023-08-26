@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const utils = require('utils');
+// const utils = require('utils');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
@@ -76,8 +76,8 @@ function writeToFile(fileName, data) {
 function init() {
 inquirer
   .prompt(questions)
-  .then((answers) => {
-    writeToFile("README.md", generateMarkdown(...answers));
+  .then((data) => {
+    writeToFile("README.md", generateMarkdown(...data));
     console.log("Generating your professional README file");
   })
 
