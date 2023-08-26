@@ -1,2 +1,2 @@
 # README-Generator
-A command-line application that dynamically generates a professional README.md file
+A application that dynamically generates a professional README.md file with user answers via the command line
