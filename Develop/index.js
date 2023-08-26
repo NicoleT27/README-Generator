@@ -30,6 +30,7 @@ const questions = [
     type: "input",
     name: "License",
     message: "Please select a license for your application",
+    choices : ["BSD", " MIT","GNU GPL 3.0","Apache 2.0","ISC","none"]
   },
   {
     type: "input",
@@ -40,11 +41,6 @@ const questions = [
     type: "input",
     name: "Test",
     message: "What commands does the user need to test the application?",
-  },
-  {
-    type: "input",
-    name: "Dependencies",
-    message: "Please list any dependencies used for your application.",
   },
   {
     type: "input",
