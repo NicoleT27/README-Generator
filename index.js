@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
+const utils = require("util/types");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
@@ -27,10 +28,10 @@ const questions = [
     message: "Please give insturctions on how to utilize your application.",
   },
   {
-    type: "input",
+    type: "list",
     name: "License",
-    message:
-      "Please select a license for your application from the following : BSD, MIT, GNU GPL 3.0, Apache 2.0, ISC, or none.",
+    message:"Please select a license for your application from the following",
+    choices: ["BSD", "MIT", "GNU GPL 3.0", "Apache 2.0", "ISC", "or none."],
   },
   {
     type: "input",
@@ -62,8 +63,6 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
-    console.log(fileName);
-    console.log(data);
     if (err) {
       return console.log("There has been an error");
     } else {
@@ -74,9 +73,10 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-  inquirer.prompt(questions).then((data) => {
-    writeToFile("README.md", generateMarkdown(...data));
-    console.log("Generating your professional README file");
+  inquirer.prompt([questions]).then((data) => {
+    console.log("Generating your professional README file...");
+    writeToFile("README.md", generateMarkdown({...data}));
+    
   });
 }
 // Function call to initialize app
