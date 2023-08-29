@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "BSD") {
-    return "";
+    return "![Github License](https://img.shields.io/badge/License-BSD-blue.svg)";
   } else if (license === "MIT") {
     return "![Github License](https://img.shields.io/badge/License-MIT-blue.svg)";
   } else if (license === "GNU GPL 3.0") {
@@ -11,8 +11,9 @@ function renderLicenseBadge(license) {
     return "![Github License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)";
   } else if (license === "ISC") {
     return "![Github License](https://img.shields.io/badge/License-ISC-blue.svg)";
-  }
+  } else if (license === "none") {
   return "";
+  }
 }
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -27,45 +28,53 @@ function renderLicenseLink(license) {
     return "https://choosealicense.com/licenses/apache-2.0/";
   } else if (license === "ISC") {
     return "https://opensource.org/licenses/ISC/";
-  }
+  } else if (license === "none") {
   return "";
+  }
 }
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-if (license != "none") {
-  return `## License `;
+  if (license != "none") {
+    return `## License `;
+  } else {
+  return "";
+  }
 }
-return "";
-}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
-# ${data.title}
-by ${data.name}
+## ${data.Title}
+by ${data.Name}
+<br>
+Licensed under 
+<br>
+${renderLicenseBadge(data.License)}
 ## Description
-${data.description}
+${data.Description}
 ## Table of Contents
-*[Installation](#Install)
-*[Usage](#Usage)
-*[License](#License)
-*[Contributing](#Contributers)
-*[Tests](#Test)
-*[Contact](#Contact)
+[Installation](#install)<br>
+[Usage](#usage)<br>
+[License](#license)<br>
+[Contributing](#contributing)<br>
+[Tests](#tests)<br>
+[Questions](#questions)
 ## Install
-${data.install}
+${data.Install}
 ## Usage
-${data.usage}
+${data.Usage}
 ## License
-${data.license}
+${data.License}
 ## Contributing
-${data.contributor}
+${data.Contributers}
 ## Tests
-${data.test}
-## Contact 
-Name: ${data.name}
-Github: [${data.github}](https://github.com/${data.github}/)
-Email: ${data.email}
+${data.Test}
+## Questions 
+Should you have any questions feel free to reach me with the contact information below
+Name: ${data.Name}
+Github: (https://github.com/${data.Github}/)
+Email: ${data.Email}
 `;
 }
 
