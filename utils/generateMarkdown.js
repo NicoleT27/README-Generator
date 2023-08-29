@@ -47,18 +47,16 @@ function generateMarkdown(data) {
   return `
 ## ${data.Title}
 by ${data.Name}
-<br>
 Licensed under 
-<br>
 ${renderLicenseBadge(data.License)}
 ## Description
 ${data.Description}
 ## Table of Contents
-[Installation](#install)<br>
-[Usage](#usage)<br>
-[License](#license)<br>
-[Contributing](#contributing)<br>
-[Tests](#tests)<br>
+[Installation](#install)
+[Usage](#usage)
+[License](#license)
+[Contributing](#contributing)
+[Tests](#tests)
 [Questions](#questions)
 ## Install
 ${data.Install}
