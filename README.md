@@ -8,7 +8,7 @@ Will need to include node.js and inquirer NPM
 The user needs to open the terminal/command line
 ![Terminal](/utils/images/terminal.jpg)
 Type node index.js and it will then populate a series of questions. 
-!Node.js ](/utils/images/node.js.jpg)
+![Node.js ](/utils/images/node.js.jpg)
 After having gone through them all, the responses will be taken and a readme.md file will be generated.
 ## Questions 
 Should you have any questions feel free to reach me with the contact information below
